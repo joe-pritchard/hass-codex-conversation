@@ -118,9 +118,8 @@ class CodexConversationEntity(ConversationEntity):
             entry_type=dr.DeviceEntryType.SERVICE,
         )
 
-        self._attr_supported_features = conversation.ConversationEntityFeature.ATTACHMENT
         if self._options.get(CONF_LLM_HASS_API):
-            self._attr_supported_features |= (
+            self._attr_supported_features = (
                 conversation.ConversationEntityFeature.CONTROL
             )
 
